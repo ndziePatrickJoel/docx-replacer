@@ -42,7 +42,7 @@ $docx->replaceTexts($fromToArray);
 This code will replace text **$search** to image that are located in **$path** in **$pathToDocx** file
 
 ```php
-$docx = new IRebega\DocxReplacer($pathToDocx);
+$docx = new IRebega\Docx($pathToDocx);
 
 $docx->replaceTextToImage($search, $path);
 ```
