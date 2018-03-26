@@ -26,7 +26,7 @@ $docx->replaceText($search, $replace);
 
 ### Text to multiple text replace in one
 
-This code will replace every key in **$fromToArray** to his corresponding value and apply it to **$pathToDocx"" file
+This code will replace every key in **$fromToArray** to his corresponding value and apply it to **$pathToDocx** file
 
 ```php
 $docx = new IRebega\Docx($pathToDocx);
