@@ -48,6 +48,18 @@ class Docx extends \ZipArchive
         $this->replaceTextInLocation($from, $to, self::FOOTER_LOCATION);
         $this->replaceTextInLocation($from, $to, self::DOCUMENT_BODY_LOCATION);
     }
+    
+    /**
+     *
+     * Replace many text to anothers, similar to replaceText but with array
+     * @param $texts an associative array where $from is the key and $to the value
+     */
+    public function replaceTexts($texts)
+    {
+        $this->replaceTextsInLocation($texts, self::HEADER_LOCATION);
+        $this->replaceTextsInLocation($texts, self::FOOTER_LOCATION);
+        $this->replaceTextsInLocation($texts, self::DOCUMENT_BODY_LOCATION);
+    }
 
     /**
      * Replace text to given image
@@ -86,6 +98,23 @@ class Docx extends \ZipArchive
         $this->addFromString($location, $message);
 
         $this->save();
+    }
+    
+     /**
+     * Replace many text to anothers 
+     * @param $texts  an associative array where $from is the key and $to the value
+     * @param $location
+     */
+    private function replaceTextsInLocation($texts, $location)
+    {   
+            $message = $this->getFromName($location);
+            foreach($texts as $from => $to)
+            {
+                $message = str_replace($from, $to, $message);
+            }
+            $this->addFromString($location, $message);
+
+            $this->save();        
     }
 
 
