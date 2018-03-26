@@ -19,10 +19,23 @@ composer require irebega/docx-replacer
 This code will replace **$search** to **$replace** in **$pathToDocx** file
 
 ```php
-$docx = new IRebega\DocxReplacer($pathToDocx);
+$docx = new IRebega\Docx($pathToDocx);
 
 $docx->replaceText($search, $replace);
 ```
+
+### Text to multiple text replace in one
+
+This code will replace every key in **$fromToArray** to his corresponding value and apply it to **$pathToDocx"" file
+
+```php
+$docx = new IRebega\Docx($pathToDocx);
+
+$fromToArray = array('key1' => 'value1', 'key2' => 'value2', ...);
+
+$docx->replaceTexts($fromToArray);
+```
+
 
 ### Text to image replace
 
