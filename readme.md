@@ -19,7 +19,7 @@ composer require irebega/docx-replacer
 This code will replace **$search** to **$replace** in **$pathToDocx** file
 
 ```php
-$docx = new IRebega\DocxReplacer($pathToDocx);
+$docx = new IRebega\Docx($pathToDocx);
 
 $docx->replaceText($search, $replace);
 ```
